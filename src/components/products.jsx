@@ -1,6 +1,10 @@
 
 import "../styles/products.css"
 import { useCart } from "../hooks/useCart"
+import { Add } from "@mui/icons-material"
+import { AddShoppingCart } from "@mui/icons-material"
+import { Button } from "@mui/material"
+import { Filters } from "./Filters"
 
 export function Products({products}) {
  
@@ -9,8 +13,10 @@ export function Products({products}) {
     return(
         <>
         <header className="title-products">
+            
         <h1>Productos disponibles</h1>
         <h4> -------- Puedes comprar tantos productos quieras -------- </h4>
+        <Filters></Filters>
         </header>
       
         <main className="body-products" >
@@ -23,7 +29,7 @@ export function Products({products}) {
                         <img src={product.image} alt="" />
                         <h6>$ {product.price}</h6>
                       
-                        <button onClick={() => addToCart(product) }>{isProductInCart(product) ? "+" :"add"}</button>        
+                        <Button onClick={() => addToCart(product) }>{isProductInCart(product) ? <Add sx={{color:'green'}}></Add> :<AddShoppingCart sx={{color:'white', border:'1px solid white', padding:'4px', borderRadius:'10%'}}></AddShoppingCart> }</Button>        
                         </div>
                        )   )
                 }

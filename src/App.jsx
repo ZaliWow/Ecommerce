@@ -7,7 +7,6 @@ import { useFilters } from './hooks/useFilters'
 import { CartShop } from './components/CartShop'
 import { CartProvider } from './context/cart'
 
- 
 
 
 function App() {
@@ -41,7 +40,7 @@ const filteredProducts = filtersProducts(products)
   return (
     <CartProvider>
 
-     <Filters ></Filters>
+   
      <CartShop></CartShop>
      <Products products={filteredProducts}></Products>
  

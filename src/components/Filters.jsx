@@ -3,6 +3,11 @@ import { FiltersContext } from "../context/filters"
 import { useFilters } from "../hooks/useFilters"
 import "../styles/filters.css"
 
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormHelperText from '@mui/material/FormHelperText';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 
 export function Filters({}) {
@@ -47,14 +52,26 @@ const {setFiltersBody, filtersBody}= useFilters()
        
         <span>{filtersBody.minPrice}</span>
    </div>
+   
    <div>
-    <label htmlFor={categoryId}>Category</label>
-    <select  id={categoryId} onChange={handleChangeCategory}>
-        <option value="all">Todo</option>
-        <option value="men's clothing">Ropa Masculina</option>
-        <option value="jewelery">joyeria</option>
-    </select>
-   </div>
+      <FormControl sx={{ m: 1, minWidth: 120,  }}>
+        <InputLabel sx={{color:'black'}} id="demo-simple-select-helper-label">Type</InputLabel>
+        <Select
+          labelId="demo-simple-select-helper-label"
+          id="demo-simple-select-helper"
+          value="type"
+          label="type"
+         onChange={handleChangeCategory}
+          sx={{color:'black', borderColor:'white'}}
+        >
+          <MenuItem value="all">todo</MenuItem>
+          <MenuItem value="men's clothing">Ropa masculina</MenuItem>
+          <MenuItem value="jewelery">Joyeria</MenuItem>
+        </Select>
+        <FormHelperText sx={{color:'black', textAlign:'center'}}>Category</FormHelperText>
+      </FormControl>
+     
+    </div>
         </main>
         
         
