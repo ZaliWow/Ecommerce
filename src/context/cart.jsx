@@ -6,6 +6,7 @@ export const CartContext = createContext()
 
 export function CartProvider({ children }) {
     const [cart, setCart] = useState([])
+    const [totalAccountState, setTotalAccountState]=useState(0)
 
     const addToCart = product => {
         const productInCartIndex = cart.findIndex(item => item.id === product.id)
@@ -14,6 +15,7 @@ export function CartProvider({ children }) {
             const newCart = structuredClone(cart)
             newCart[productInCartIndex].quantity += 1
             return setCart(newCart)
+         
         }
             setCart(prevState => ([
                 ...prevState,
@@ -22,10 +24,11 @@ export function CartProvider({ children }) {
                     quantity:1
                 }
             ]))  
-
+   
     }
     const clearToCart = () => {
         setCart([])
+        setTotalAccountState(0)
     }
     const isProductInCart = product =>{
        return cart.some(item => item.id ===product.id)
@@ -44,9 +47,19 @@ export function CartProvider({ children }) {
             newCart.splice(productInCartIndex, 1)
             return setCart(newCart)
         }
+        TotalAccountCart(product)
 
     }
-
+    const TotalAccountCart = cart =>{
+        if(Array.isArray(cart) ){
+        let temporalAccount = 0;
+        for (let i = 0; cart.length >i; i++ ){
+            let temporalProduct = cart[i].price * cart[i].quantity
+            temporalAccount += temporalProduct
+        }
+       return setTotalAccountState(parseFloat(temporalAccount.toFixed(2)))}
+       ()=>{}
+    }
 
 
     return (
@@ -57,7 +70,9 @@ export function CartProvider({ children }) {
                 addToCart,
                 isProductInCart,
                 isCartVoid,
-                deleteProductCart
+                deleteProductCart,
+                totalAccountState,
+                TotalAccountCart
             }
         }>
             {children}

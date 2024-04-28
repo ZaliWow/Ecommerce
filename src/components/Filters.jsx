@@ -44,21 +44,19 @@ const {setFiltersBody, filtersBody}= useFilters()
         <input 
         type="range" 
         min="0" 
-        max="100" 
+        max="800" 
         id={minPriceId}
         onChange={handleChangeMinPrice}
         value={filtersBody.minPrice}
         />
-       
         <span>{filtersBody.minPrice}</span>
    </div>
    
    <div>
       <FormControl sx={{ m: 1, minWidth: 120,  }}>
-        <InputLabel sx={{color:'black'}} id="demo-simple-select-helper-label">Type</InputLabel>
+        <InputLabel sx={{color:'black'}} id={minPriceId}>Type</InputLabel>
         <Select
-          labelId="demo-simple-select-helper-label"
-          id="demo-simple-select-helper"
+          labelId={minPriceId}
           value="type"
           label="type"
          onChange={handleChangeCategory}

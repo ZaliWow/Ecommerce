@@ -1,9 +1,8 @@
 .body-filters{
     display: flex;
   justify-content: center;
- 
     border-radius: 10%;
-    padding: 40px;
+
     width: 100%;
 }
     
@@ -32,7 +31,7 @@
     -webkit-appearance: none; /* Elimina el estilo predeterminado del navegador */
     width: 100%; /* Ancho del rango */
     height: 10px; /* Altura del rango */
-    background: #dddddd; /* Color del track */
+    background: #979797; /* Color del track */
     border-radius: 10px; /* Radio de borde del track */
     outline: none; /* Elimina el contorno predeterminado */
   }
@@ -58,7 +57,7 @@
     -moz-appearance: none; /* Para navegadores basados en Gecko (Firefox) */
     background-color: #ff0000; /* Color de fondo del select */
     color: white;
-    border: 1px solid #ccc; /* Borde del select */
+    border: 1px solid #5d5d5d; /* Borde del select */
     padding: 3px; /* Espaciado interno */
     width: 200px; /* Ancho del select */
     font-size: 16px; /* Tamaño de fuente */

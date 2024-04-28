@@ -15,10 +15,10 @@ export function Products({products}) {
         <header className="title-products">
             
         <h1>Productos disponibles</h1>
-        <h4> -------- Puedes comprar tantos productos quieras -------- </h4>
         <Filters></Filters>
+
         </header>
-      
+       
         <main className="body-products" >
             
             <ul>

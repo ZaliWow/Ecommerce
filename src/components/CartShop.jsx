@@ -5,12 +5,14 @@ import { ShoppingCart } from "@mui/icons-material"
 import { Add } from "@mui/icons-material"
 import { Button } from "@mui/material"
 import { Delete } from "@mui/icons-material"
+import { useEffect } from "react"
 
 
 export function CartShop({ }) {
 
-    const { clearToCart, cart, isCartVoid, deleteProductCart, addToCart } = useCart()
-
+    const { clearToCart, cart, isCartVoid, deleteProductCart, addToCart, totalAccountState, TotalAccountCart } = useCart()
+    useEffect(() => {
+TotalAccountCart(cart)}, [cart]);
     return (
         <>
 
@@ -19,11 +21,10 @@ export function CartShop({ }) {
 
             <aside className="body-cartShop" id="body-cartShop">
                <header className="title-cart">
-               <h2>Tus compras</h2>
+               <h2>Tus compras:{totalAccountState}</h2>
                 <Button onClick={() => clearToCart()}><DeleteForever sx={{color:'red'}}></DeleteForever></Button>
 
                </header>
-               
 
 
                 {
@@ -38,6 +39,8 @@ export function CartShop({ }) {
                                         <div className="container-buttons-cart">
                                             <Button onClick={() => deleteProductCart(product)} ><Delete sx={{ color: 'red' }}></Delete></Button>
                                             <Button onClick={() => addToCart(product)}><Add sx={{ color: 'green' }}></Add></Button>
+                                           
+                                       
                                         </div>
                                     </div>
                                 ))
@@ -49,7 +52,7 @@ export function CartShop({ }) {
 
 
 
-                        : <h3>Aún no tienes productos en tu carrito de compra </h3>
+                        : <h3 className="products-in-cart">Aún no tienes productos en tu carrito de compra </h3>
 
 
                 }

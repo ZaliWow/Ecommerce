@@ -1,0 +1,55 @@
+.body-presentation{
+  
+    width: 100%;
+    height: 100vh;
+
+    background-image: url("/images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1;
+}
+.presentation{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    color: white;
+    background-color: rgba(0,0,0,0.4);
+}
+.presentation header{
+    display: block; 
+    padding: 30px;
+    padding-top: 10%;
+    background-color: rgba(0,0,0,0.4);
+}
+.presentation footer{
+    display: flex;
+    
+    
+}
+.presentation img{
+    margin-top: 20vh;
+    width: 55vw;
+}
+@media screen and (max-width:800px) {
+    .presentation{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        color: white;
+        background-color: rgba(0,0,0,0.4);
+    }
+    .presentation img{
+        margin-top: 00vh;
+      
+        width: 70vw;
+    }
+    .presentation footer{
+        display: flex;
+        justify-content: center;
+        
+    }
+    
+}
