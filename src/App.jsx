@@ -23,7 +23,12 @@ const inicialQuantity = finalQuantity - productQuantity
 const filteredProducts = filtersProducts(products)
 
 const numberPages = Math.ceil(filteredProducts.length / productQuantity)
-
+useEffect((
+) => {
+  if(numberPages === 1){
+    setActualPage(1)
+  }
+},[actualPage])
 const nProducts = filteredProducts.slice(inicialQuantity, finalQuantity)
 
 

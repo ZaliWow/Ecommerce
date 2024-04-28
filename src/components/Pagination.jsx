@@ -5,15 +5,16 @@ import "../styles/pagination.css"
 export function Pagination({numberPages, actualPage, setActualPage}) {
     
 const handleNextPage = () =>{
-    if(numberPages != actualPage){
+    if(numberPages >  actualPage  ){
         setActualPage(actualPage +  1)
     }
 }
 const handlePrevPage = () =>{
-    if(numberPages != 1){
+    if(actualPage != 1){
         setActualPage(actualPage -  1)
     }
 }
+
 
     return(
         <div className="body-pagination">
