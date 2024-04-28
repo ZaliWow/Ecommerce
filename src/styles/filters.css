@@ -20,7 +20,7 @@
 .body-filters input{
 }
 .body-filters span{
-    color: red;
+    color: orange;
     padding: 10px;
 }
 .container-input{
@@ -41,7 +41,7 @@
     -webkit-appearance: none; /* Elimina el estilo predeterminado del navegador */
     width: 10px; /* Ancho del thumb */
     height: 10px; /* Altura del thumb */
-    background: #f10202; /* Color del thumb */
+    background: orange; /* Color del thumb */
     border-radius: 50%; /* Radio de borde del thumb (para que sea redondo) */
     cursor: pointer; /* Cursor al pasar sobre el thumb */
   }

@@ -26,13 +26,12 @@ TotalAccountCart(cart)}, [cart]);
 
                </header>
 
-
                 {
                     isCartVoid(cart) ?
                         <div className="products-in-cart">
                             {
                                 cart.map(product => (
-                                    <div key={product.id} className="products">
+                                    <div key={product.id} className="products-shop">
                                         <h6> {product.title}</h6>
                                         <img src={product.image} alt="" />
                                         <h5>$ {product.price} , Cantidad : <span>{product.quantity}</span></h5>

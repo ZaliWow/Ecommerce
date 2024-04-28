@@ -51,14 +51,13 @@ export function CartProvider({ children }) {
 
     }
     const TotalAccountCart = cart =>{
-        if(Array.isArray(cart) ){
         let temporalAccount = 0;
         for (let i = 0; cart.length >i; i++ ){
             let temporalProduct = cart[i].price * cart[i].quantity
             temporalAccount += temporalProduct
         }
-       return setTotalAccountState(parseFloat(temporalAccount.toFixed(2)))}
-       ()=>{}
+       return setTotalAccountState(parseFloat(temporalAccount.toFixed(2)))
+      
     }
 
 

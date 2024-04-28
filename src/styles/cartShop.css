@@ -29,6 +29,19 @@
     height:70vh;
 overflow: auto;
 }
+.products-shop {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    align-items: center;
+    width: 250px;
+    height: 280px;
+    padding: 5px;
+    border-radius: 5%;
+    background: rgb(248, 175, 80);
+    color: black;
+    border: 1px solid rgb(248, 218, 180);;
+  }
 .products-in-cart span{
     color: rgb(255, 0, 0);
 }

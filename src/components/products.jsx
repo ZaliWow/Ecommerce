@@ -5,6 +5,7 @@ import { Add } from "@mui/icons-material"
 import { AddShoppingCart } from "@mui/icons-material"
 import { Button } from "@mui/material"
 import { Filters } from "./Filters"
+import { Pagination } from "./Pagination"
 
 export function Products({products}) {
  
@@ -29,13 +30,15 @@ export function Products({products}) {
                         <img src={product.image} alt="" />
                         <h6>$ {product.price}</h6>
                       
-                        <Button onClick={() => addToCart(product) }>{isProductInCart(product) ? <Add sx={{color:'green'}}></Add> :<AddShoppingCart sx={{color:'white', border:'1px solid white', padding:'4px', borderRadius:'10%'}}></AddShoppingCart> }</Button>        
+                        <Button onClick={() => addToCart(product) }>{isProductInCart(product) ? <Add sx={{color:'green'}}></Add> :<AddShoppingCart sx={{color:'black', border:'1px solid white', padding:'4px', borderRadius:'10%'}}></AddShoppingCart> }</Button>        
                         </div>
                        )   )
                 }
             </ul>
         </main>
     
+
+
         </>
     )
     
