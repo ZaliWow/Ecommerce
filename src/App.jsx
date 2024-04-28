@@ -26,9 +26,9 @@ const numberPages = Math.ceil(filteredProducts.length / productQuantity)
 
 useEffect((
 ) => {
-  if(numberPages === 1){
+ 
     setActualPage(1)
-  }
+  
 },[actualPage, numberPages])
 const nProducts = filteredProducts.slice(inicialQuantity, finalQuantity)
 

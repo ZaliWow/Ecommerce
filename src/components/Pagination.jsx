@@ -18,7 +18,7 @@ const handlePrevPage = () =>{
 
     return(
         <div className="body-pagination">
-        <Button onClick={handlePrevPage} sx={{ color:'white', border:'1px solid white' , margin:'1rem'}}>-</Button>
+        <Button onClick={handlePrevPage} sx={{color:'white', border:'1px solid white' , margin:'1rem'}}>-</Button>
        <h3>Pagina {actualPage}/{numberPages}</h3>
        
         <Button onClick={handleNextPage} sx={{ color:'white', border:'1px solid white' , margin:'1rem'}}>+</Button>
