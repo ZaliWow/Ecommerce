@@ -1,0 +1,77 @@
+.body-filters{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    width: 100%;
+    color: white;
+    background: rgba(0,0,0,0.8)
+}
+.body-filters label{
+    padding: 10px;
+}
+.body-filters input{
+}
+.body-filters span{
+    color: red;
+    padding: 10px;
+}
+.container-input{
+    display: flex;
+    align-items: center;
+}
+.body-filters input[type=range] {
+    -webkit-appearance: none; /* Elimina el estilo predeterminado del navegador */
+    width: 100%; /* Ancho del rango */
+    height: 10px; /* Altura del rango */
+    background: #dddddd; /* Color del track */
+    border-radius: 10px; /* Radio de borde del track */
+    outline: none; /* Elimina el contorno predeterminado */
+  }
+  
+  /* Estilos para el thumb (control deslizante) */
+  .body-filters input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Elimina el estilo predeterminado del navegador */
+    width: 10px; /* Ancho del thumb */
+    height: 10px; /* Altura del thumb */
+    background: #f10202; /* Color del thumb */
+    border-radius: 50%; /* Radio de borde del thumb (para que sea redondo) */
+    cursor: pointer; /* Cursor al pasar sobre el thumb */
+  }
+  
+  /* Estilo para el track del input de tipo range cuando está en un estado de deslizamiento */
+  .body-filters input[type=range]::-webkit-slider-runnable-track {
+    background: #ffffff; /* Color del track cuando se desliza */
+    border-radius: 50%;
+  }
+  .body-filters select {
+    appearance: none; /* Elimina el estilo predeterminado del navegador */
+    -webkit-appearance: none; /* Para navegadores basados en WebKit */
+    -moz-appearance: none; /* Para navegadores basados en Gecko (Firefox) */
+    background-color: #ff0000; /* Color de fondo del select */
+    color: white;
+    border: 1px solid #ccc; /* Borde del select */
+    padding: 3px; /* Espaciado interno */
+    width: 200px; /* Ancho del select */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cursor al pasar sobre el select */
+    border-radius: 3%;
+    text-align: center;
+  }
+  
+  /* Estilo para el indicador desplegable */
+  .body-filters select::after {
+    content: '\25BC'; /* Unicode para la flecha hacia abajo ▼ */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none; /* Evita que el indicador desplegable sea interactivo */
+  }
+  
+  /* Estilo para las opciones del select */
+  .body-filters  select option {
+    background-color: #ff0000; /* Color de fondo de las opciones */
+    color: #ffffff; /* Color del texto de las opciones */
+  }
+  

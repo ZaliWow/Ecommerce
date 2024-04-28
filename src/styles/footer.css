@@ -1,0 +1,16 @@
+.footer{
+    position: fixed;
+    width: 90%;
+    align-items: center;
+    text-align: start;
+    padding: 10px;
+    height: 40%;
+    color: white;
+    border-radius: 10%;
+    left: 15px;
+    bottom: 15px;
+    background: rgba(0,0,0,0.7);
+}
+.footer h4{
+    margin :0;
+}
