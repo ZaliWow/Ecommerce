@@ -3,12 +3,8 @@ import { FiltersContext } from "../context/filters"
 import { useFilters } from "../hooks/useFilters"
 import "../styles/filters.css"
 
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormHelperText from '@mui/material/FormHelperText';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-
+import {Select} from "@mui/material"
+import {MenuItem} from "@mui/material"
 
 export function Filters({}) {
    
@@ -38,38 +34,22 @@ const {setFiltersBody, filtersBody}= useFilters()
    return(
         <>
         <main className="body-filters">
-   <div className="container-input">
-    
-   <label htmlFor={minPriceId}>Precio</label>
-        <input 
-        type="range" 
-        min="0" 
-        max="800" 
-        id={minPriceId}
-        onChange={handleChangeMinPrice}
-        value={filtersBody.minPrice}
-        />
-        <span>{filtersBody.minPrice}</span>
-   </div>
-   
-   <div>
-      <FormControl sx={{ m: 1, minWidth: 120,  }}>
-        <InputLabel sx={{color:'black'}} id={minPriceId}>Type</InputLabel>
-        <Select
-          labelId={minPriceId}
-          value="type"
-          label="type"
-         onChange={handleChangeCategory}
-          sx={{color:'black', borderColor:'white'}}
+            <h1>Nuestros productos</h1>
+      <span>Filtrar</span>
+    <Select
+        name="type"
+        onChange={handleChangeCategory}
+      
         >
-          <MenuItem value="all">todo</MenuItem>
-          <MenuItem value="men's clothing">Ropa masculina</MenuItem>
-          <MenuItem value="jewelery">Joyeria</MenuItem>
+          <MenuItem value="Hamburguesa">Hamburguesas</MenuItem>
+          <MenuItem  value="Saclhipapas">Salchipapas</MenuItem>
+          <MenuItem value="Carnes">Carnes</MenuItem>
+          <MenuItem  value="Bebidas">Bebidas</MenuItem>
+          <MenuItem  value="Bebidas espciales">Bebidas especiales</MenuItem>
         </Select>
-        <FormHelperText sx={{color:'black', textAlign:'center'}}>Category</FormHelperText>
-      </FormControl>
+    
+
      
-    </div>
         </main>
         
         

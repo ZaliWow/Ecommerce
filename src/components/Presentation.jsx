@@ -13,7 +13,7 @@ export function Presentation(params) {
             </header>
             <footer>
                 <h3>
-                <img src="images/background.jpg" alt="" />
+                <img  src="images\fondo login.jpg" alt="" />
                 </h3>
             </footer>
            </div>

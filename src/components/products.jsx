@@ -13,28 +13,38 @@ export function Products({products}) {
     const {addToCart, isProductInCart,  }= useCart()
     return(
         <>
-        <header className="title-products">
-            
-        <h1>Productos disponibles</h1>
-        <Filters></Filters>
-
-        </header>
-       
+        
+     
         <main className="body-products" >
             
             <ul>
                 {
                     products.map (product=>(
                         <div  key={product.id} className="products">
-                        <h6> {product.title}</h6>
-                        <img src={product.image} alt="" />
-                        <h6>$ {product.price}</h6>
-                      
-                        <Button onClick={() => addToCart(product) }>{isProductInCart(product) ? <Add sx={{color:'green'}}></Add> :<AddShoppingCart sx={{color:'black', border:'1px solid white', padding:'4px', borderRadius:'10%'}}></AddShoppingCart> }</Button>        
-                        </div>
+                            <div className="body-img">
+                            <img src={product.image} alt="" />
+                            </div>
+                       
+                            <div className="body-information">
+                        <h4> {product.title}  <span style={{color:'red'}}>$ {product.price}</span></h4>
+                       
+                       <span>{product.description}</span>
+                       
+
+                       
+
+                            </div>
+                            <div className="body-button">
+                      <Button onClick={() => addToCart(product) }>{isProductInCart(product) ? <Add sx={{color:'green',border:'1px solid green', padding:'4px', borderRadius:'10%'}}></Add> :<AddShoppingCart sx={{color:'black', border:'1px solid black', padding:'4px', borderRadius:'10%'}}></AddShoppingCart> }</Button>        
+                    
+                      </div>
+                        
+                    
+                         </div>
                        )   )
                 }
             </ul>
+        
         </main>
     
 

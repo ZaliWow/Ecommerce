@@ -17,7 +17,7 @@ export function useFilters() {
           product.price >= filtersBody.minPrice && (
   
             filtersBody.category === 'all' ||
-            product.category === filtersBody.category
+            product.type === filtersBody.category
           )
         )
       } )

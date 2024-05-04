@@ -1,12 +1,12 @@
 
 import { useContext, useEffect, useState } from 'react'
 import { Products } from './components/products'
-import { Footer } from './components/Footer'
 import { useFilters } from './hooks/useFilters'
 import { CartShop } from './components/CartShop'
 import { CartProvider } from './context/cart'
 import { Presentation } from './components/Presentation'
 import { Pagination } from './components/Pagination'
+import { AboutUs } from './components/AboutUs'
 
 
 function App() {
@@ -17,7 +17,7 @@ const [haveProducts, setHaveProducts] =useState (false)
 const filteredProducts = filtersProducts(products)
 //pagination states
 
-const [productQuantity, setProductQuantity] = useState(4)
+const [productQuantity, setProductQuantity] = useState(6)
 const [actualPage, setActualPage]= useState(1)
 
 const finalQuantity =  actualPage * productQuantity
@@ -28,6 +28,9 @@ useEffect((
 ) => {
   if(actualPage > numberPages   ){
     setActualPage(1)
+  }
+  else if (numberPages === 0){
+    setActualPage(0)
   }
 },[actualPage,numberPages])
 
@@ -67,10 +70,10 @@ const nProducts = filteredProducts.slice(inicialQuantity, finalQuantity)
 
    <Presentation></Presentation>
      <CartShop></CartShop>
-     <Products products={nProducts}></Products>
- 
      <Pagination numberPages={numberPages} actualPage={actualPage} setActualPage={setActualPage}></Pagination>
-    </CartProvider>
+     <Products products={nProducts}></Products>
+    <AboutUs></AboutUs>
+        </CartProvider>
   )
 }
 
